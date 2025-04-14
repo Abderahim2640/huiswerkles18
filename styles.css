@@ -1,0 +1,121 @@
+/* ALGEMEEN */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #be3b3b;
+  color: #333;
+}
+
+/* ENKEL een afbeelding in de header – ZONDER extra effecten */
+/* Zorg voor een scherpe afbeelding met juiste verhouding */
+/* ZORG DAT TILBURG.JPG MINSTENS 1920x800px IS */
+
+header {
+  background-image: url('afbeeldingen/tilburg.jpg');
+  background-size: cover;             /* vult volledig, mag snijden */
+  background-position: center center; /* altijd netjes gecentreerd */
+  background-repeat: no-repeat;
+  height: 200px;                      /* of 500/600px als je meer beeld wil */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1em;
+}
+
+header h1 {
+  color: white;
+  font-size: 3em;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* optioneel voor leesbaarheid */
+}
+
+
+
+/* LAYOUT */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  gap: 2em;
+}
+
+/* LINKERDEEL */
+.sidebar {
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 10px;
+}
+
+.facts-list {
+  columns: 2;
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+/* RECHTERDEEL */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 10px;
+}
+
+.content-block img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+/* MEDIAQUERY */
+@media (min-width: 768px) {
+  .main-layout {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .sidebar {
+    flex: 2;
+  }
+
+  .content {
+    flex: 9;
+  }
+
+  .content-block {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .text {
+    flex: 2;
+  }
+
+  .image {
+    flex: 1;
+  }
+
+  .content-block img {
+    width: 100%;
+    height: auto;
+  }
+}
